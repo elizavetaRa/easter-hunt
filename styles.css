@@ -327,6 +327,7 @@ body::after {
   transition: border-color 0.3s, box-shadow 0.3s;
   letter-spacing: 0.15em;
   backdrop-filter: blur(8px);
+  text-transform: uppercase;
 }
 .password-input:focus {
   border-color: var(--gold);
