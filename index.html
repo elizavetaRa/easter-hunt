@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easter Egg Hunt</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="floating-eggs">
+  <span>🥚</span><span>🌷</span><span>🐣</span><span>🌸</span>
+  <span>🥚</span><span>🌿</span><span>🐣</span><span>🌷</span>
+</div>
+
+<div class="ornate-frame"></div>
+
+<div class="container">
+
+  <!-- ═══════════ STAGE 1: Find the egg ═══════════ -->
+  <div class="stage active" id="stage1">
+    <div class="flourish">✦ ✦ ✦</div>
+
+    <h1 class="title">
+      <span class="title-text">Easter<br>Egg Hunt</span>
+      <span class="title-emojis">
+        <span class="flower-decor">🌷</span> <span class="egg-decoy">🥚</span> <span class="egg-decoy">🥚</span> <span class="egg-btn" id="eggBtn" title="">🥚</span> <span class="flower-decor">🌷</span>
+      </span>
+    </h1>
+
+    <div class="divider"></div>
+
+    <div class="hint-box">
+      <div class="hint-label">✦ Hint 1 ✦</div>
+      <div class="hint-text">
+        Find the Easter egg hidden<br>somewhere on this page&hellip;
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STAGE 2: Password ═══════════ -->
+  <div class="stage" id="stage2">
+    <button class="back-btn" onclick="goBack(2)">← Back</button>
+    <div class="flourish">✦ ✦ ✦</div>
+
+    <h2 class="title" style="font-size:clamp(1.5rem,4vw,2.4rem); opacity:1; animation:none;">
+      🐣 <span class="title-text">You found the egg!</span> 🐣
+    </h2>
+
+    <div class="divider" style="opacity:1; animation:none;"></div>
+
+    <div class="hint-box" style="opacity:1; animation:none;">
+      <div class="hint-label">✦ Hint 2 ✦</div>
+      <div class="hint-text">
+        The next clue is in the picture below.<br>Enter the password to continue&hellip;
+      </div>
+    </div>
+
+    <img class="clue-image" src="img1.jpg" alt="Clue image 1" onerror="this.outerHTML='<div class=\'clue-image\' style=\'background:linear-gradient(135deg,#2d1250,#3a1558); min-height:260px; display:flex; align-items:center; justify-content:center; border:3px solid var(--gold); border-radius:12px;\'><span style=\'color:var(--gold-light); font-family:Cormorant Garamond,serif; font-size:1.3rem; opacity:0.6;\'>📷 Clue image 1</span></div>'">
+
+    <div class="password-area">
+      <input type="text" class="password-input" id="passwordInput" placeholder="Enter password&hellip;" autocomplete="off">
+      <button class="submit-btn" id="submitBtn">Unlock ✦</button>
+      <div class="error-msg" id="errorMsg">Hmm, that's not quite right&hellip; try again!</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STAGE 3: Tap to hatch ═══════════ -->
+  <div class="stage" id="stage3">
+    <button class="back-btn" onclick="goBack(3)">← Back</button>
+    <div class="flourish">✦ ✦ ✦</div>
+
+    <h2 class="title" style="font-size:clamp(1.5rem,4vw,2.4rem); opacity:1; animation:none;">
+      🥚 <span class="title-text">One last challenge!</span> 🥚
+    </h2>
+
+    <div class="divider" style="opacity:1; animation:none;"></div>
+
+    <div class="hint-box" style="opacity:1; animation:none;">
+      <div class="hint-label">✦ Hint 3 ✦</div>
+      <div class="hint-text">
+        Tap the egg <strong>10</strong> times to hatch it!
+      </div>
+    </div>
+
+    <div class="hatch-area" style="position:relative;">
+      <div class="countdown-overlay" id="countdownOverlay"></div>
+      <div class="hatch-egg" id="hatchEgg" style="pointer-events:none;">🥚</div>
+      <div class="timer-display" id="timerDisplay">3.0s</div>
+      <div class="tap-counter" id="tapCounter">0 / 10</div>
+      <div class="tap-progress-bar">
+        <div class="tap-progress-fill" id="tapProgressFill"></div>
+      </div>
+      <div class="tap-hint" id="tapHint">Get ready&hellip;</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STAGE 4: Final reveal ═══════════ -->
+  <div class="stage" id="stage4">
+    <button class="back-btn" onclick="goBack(4)">← Back</button>
+    <div class="flourish" style="animation-delay:0s;">✦ ✦ ✦</div>
+
+    <img class="final-image" src="img2.jpeg" alt="Location image 2" onerror="this.outerHTML='<div class=\'final-image\' style=\'background:linear-gradient(135deg,#2d1250,#3a1558); min-height:300px; display:flex; align-items:center; justify-content:center; border:4px solid var(--gold); border-radius:16px;\'><span style=\'color:var(--gold-light); font-family:Cormorant Garamond,serif; font-size:1.3rem; opacity:0.6;\'>📷 Location image 2</span></div>'">
+
+    <div class="happy-easter">
+      Happy Easter!
+      <span class="happy-tongue">😋🍫❤️</span>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
