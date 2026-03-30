@@ -13,7 +13,11 @@ function goBack(fromStage) {
     document.querySelectorAll('.egg-decoy, .flower-decor').forEach(el => el.classList.remove('hide'));
   }
   // reset tap-to-hatch if going back to stage 2
-  if (fromStage === 3) {
+  if (fromStage === 3 ) {
+    resetHatchState();
+  }
+
+  if (fromStage === 4) {
     resetHatchState();
   }
 }
@@ -125,7 +129,7 @@ function startCountdown() {
       setTimeout(() => {
         countdownOverlay.innerHTML = '';
         hatchEgg.style.pointerEvents = 'auto';
-        tapHint.textContent = 'Tap the egg! Fast!';
+        tapHint.textContent = 'Tap the egg!';
         tapping = true;
         startTime = Date.now();
         timerInterval = setInterval(updateTimer, 50);
@@ -218,7 +222,7 @@ hatchEgg.addEventListener('click', () => {
     hatchEgg.textContent = '🍫';
     hatchEgg.classList.remove('tap-pop');
     hatchEgg.classList.add('hatched');
-    tapHint.textContent = 'Chocolate! 🎊';
+    tapHint.textContent = '🎊';
     tapCounter.style.color = 'var(--mint)';
     timerDisplay.style.color = 'var(--mint)';
 
