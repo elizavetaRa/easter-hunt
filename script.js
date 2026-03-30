@@ -60,7 +60,6 @@ egg.addEventListener('click', () => {
       document.getElementById('stage1').classList.remove('active');
       const s2 = document.getElementById('stage2');
       s2.classList.add('active', 'stage-enter');
-      document.getElementById('passwordInput').focus();
     }, 1800);
   }
 });
