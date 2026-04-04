@@ -20,7 +20,7 @@ function goBack(fromStage) {
     startCountdown();
   }
 }
-// ── Read name from URL ──
+// ── Read name from URL query string ──
 const urlParams = new URLSearchParams(window.location.search);
 const nameParam = urlParams.get('name');
 if (nameParam && /^[A-Za-zÀ-ÿ]+$/.test(nameParam)) {
