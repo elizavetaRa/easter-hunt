@@ -21,9 +21,9 @@ function goBack(fromStage) {
   }
 }
 // ── Read name from URL ──
-const pathParts = window.location.pathname.split('/').filter(Boolean);
-const nameParam = pathParts[pathParts.length - 1];
-if (nameParam && /^[A-Za-zÀ-ÿ]+$/.test(nameParam) && !nameParam.endsWith('.html')) {
+const urlParams = new URLSearchParams(window.location.search);
+const nameParam = urlParams.get('name');
+if (nameParam && /^[A-Za-zÀ-ÿ]+$/.test(nameParam)) {
   const name = nameParam.charAt(0).toUpperCase() + nameParam.slice(1).toLowerCase();
   const titleText = document.querySelector('.title-text');
   if (titleText) {
